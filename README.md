@@ -13,6 +13,15 @@ Configurable properties:
 
 ![Spinner Preview](spinner.gif)
 
+## How To Use
+
+Import the spinner.scss file and whenever you need to display the spinner, use
+the following HTML:
+
+```html
+<div class="loading"></div>
+```
+
 ## License
 
 See the [LICENSE](LICENSE.md).
