@@ -1,0 +1,48 @@
+$leftColor: #e67e22;
+$rightColor: #2ecc71;
+$radius: 6px;
+$track: 5;
+$duration: 1.15s;
+
+$diameter: $radius * 2;
+$offset: $radius * $track;
+
+.loading {
+  position: relative;
+}
+
+.loading::before,
+.loading::after {
+  content: '';
+  border-radius: 50%;
+  width: $diameter;
+  height: $diameter;
+  display: inline-block;
+  position: absolute;
+}
+
+.loading::before {
+  transform: translate(0, 0);
+  background-color: $leftColor;
+  animation: ballspin-left $duration linear infinite;
+}
+
+.loading::after {
+  transform: translate($offset, 0);
+  background-color: $rightColor;
+  animation: ballspin-right $duration linear infinite;
+}
+
+@keyframes ballspin-left {
+  25% { z-index: 2; }
+  50% { transform: translate($offset, 0) scale(1); }
+  75% { transform: translate($offset / 2, 0) scale(0.75); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes ballspin-right {
+  25% { transform: translate($offset / 2, 0) scale(0.75); }
+  50% { transform: translate(0, 0) scale(1); }
+  75% { z-index: 2; }
+  100% { transform: translate($offset, 0) scale(1); }
+}
