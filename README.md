@@ -24,4 +24,4 @@ the following HTML:
 
 ## License
 
-See the [LICENSE](LICENSE.md).
+See the [LICENSE](LICENSE).
